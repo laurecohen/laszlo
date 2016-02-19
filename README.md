@@ -3,7 +3,9 @@
 The example is a twitter bot named [Laszlo](https://twitter.com/pr_laszlo) written using [twit](https://github.com/ttezel/twit).
 
 
-#Installing
+#Initialisation
+
+##Installing
 
 ```
 npm install twit
