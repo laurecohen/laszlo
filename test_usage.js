@@ -1,10 +1,16 @@
 var Twit = require('twit'),
-  secret = require('./secret.js'),
 	request = require('request'),
 	fs = require('fs'),
 	http = require('http'),
 	Stream = require('stream'), 
 	entities = require('entities');
+
+var T = new Twit ({       
+        consumer_key: 'Your consumer_key',
+        consumer_secret: 'Your consumer_secret',
+        access_token: 'Your access_token',
+        access_token_secret: 'Your access_token_secret'
+      };
 
 /*  -----  variables-tests  ----- */
 var txt = "";
