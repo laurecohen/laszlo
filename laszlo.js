@@ -70,14 +70,14 @@ stream.on('tweet', function (tweet) {
 					
 					for( var k = 0; k < LaszloCommand.length; k++ ){	
 
-						if ( commandes[ j ] == LaszloCommand.length ){
+						if ( commandes[ j ] == LaszloCommand [ k ] ){
 							match = true;
 							console.log("MATCH");
-							//paramsIM.push( LaszloCommand[ k ].command, LaszloCommand[ k ].param );
+							paramsIM.push( LaszloCommand[ k ].command, LaszloCommand[ k ].param );
 							break;
 						}
 					}
-					
+
 					if (!match) {
 						console.log("NO MATCH");
 						//newArray.push(commandes[j]);
