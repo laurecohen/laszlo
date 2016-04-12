@@ -1,0 +1,22 @@
+{
+  "name": "laszlo",
+  "version": "1.0.0",
+  "description": "Laszlo is a twitter bot",
+  "main": "laszlo.js",
+  "scripts": {
+    "test": "node laszlo.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurecohen/laszlo.git"
+  },
+  "author": "Laure Cohen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laurecohen/laszlo/issues"
+  },
+  "homepage": "https://github.com/laurecohen/laszlo#readme",
+  "dependencies": {
+    "twit": "^2.2.3"
+  }
+}
