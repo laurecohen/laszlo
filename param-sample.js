@@ -6,3 +6,5 @@ module.exports = {
   access_token        : '****',
   access_token_secret : '****'
 };
+
+console.log("…Laszlo params ready");

@@ -27,4 +27,4 @@ module.exports = {
 
 };
 
-console.log("Runing LaszloCommand… \r");
+console.log("…Laszlo dictionnary ready");
