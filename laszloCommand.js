@@ -1,22 +1,30 @@
-LaszloCommand = {
+module.exports = {
 
-	OpeningDay : {
+	family : {
+		racine : 'family',
+		synonym : 'siblings',
 		command : '-colorspace',
 		param : 'Gray'
 	},
-	Reds : {
-		command : '+level-colors',
-		param : 'white,red'
-	},
-	Padres : {
+	brother : {
+		racine : 'brother',
+		synonym : 'bro',
 		command : '+level-colors',
 		param : 'blue,'
 	},
-	Yankees : {
+	sister : {
+		racine : 'sister',
+		synonym : 'sis',
 		command : '-level',
 		param : '50%,50%'
+	},
+	NationalPetDay : {
+		racine : 'nationalpetday',
+		synonym : 'siblingsday',
+		command : '-wave',
+		param : '25x25'
 	}
+
 };
 
-// //console.log(LaszloCommand.grayscale.command, LaszloCommand.grayscale.param);
-
+console.log("Runing LaszloCommand… \r");

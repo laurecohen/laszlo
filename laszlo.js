@@ -22,6 +22,7 @@ var download = function(uri, filename, callback){
 	});
 };
 
+
 var T = new Twit ({       
 	consumer_key        : paramTwitter.consumer_key,
 	consumer_secret     : paramTwitter.consumer_secret,
@@ -29,68 +30,83 @@ var T = new Twit ({
 	access_token_secret : paramTwitter.access_token_secret
 });
 
-/*  -----  variables-tests  ----- */
-// var hashtags = ["#blacknwhite", "#yellowfilter"];
-// var laszlo = { screen_name: 'pr_laszlo' };
-var stream = T.stream('statuses/filter', { track: '#FridayFeeling' } );
 
-stream.on('tweet', function (tweet) {
+var laszlo = { screen_name: 'laszlobot' };
+var stream = T.stream('statuses/filter', { track: 'nationalpetday' } );
 
-	if(tweet.entities.media === undefined){
+stream.on('tweet', function (tweet){
+	
+	console.log("\r");
+	
+	if( tweet.entities.media === undefined ){
 		console.log("pas d’image");
-	}else{
+
+	} else {
 		
-		if(tweet.entities.hashtags === undefined){
+		if( tweet.entities.hashtags === undefined ){
 			console.log("pas de commande");
-		}else{
 			
-			for( var i = 0; i<tweet.entities.media.length; i++ ){
+		} else {
+			
+			for( var i = 0; i < tweet.entities.media.length; i++ ){
 
 				var addr 	 = tweet.entities.media[ i ].media_url.split(".");
 				var ext  	 = "." + addr[ addr.length - 1 ];
 				var url  	 = tweet.entities.media[ i ].media_url;
 				var id   	 = tweet.entities.media[ i ].id_str;
 				var path 	 = './data/images2/' + tweet.entities.media[ i ].id_str + ext;
-				var newpath  = './data/images2/' + id + "-R" + ext;
+				var newpath  = './data/images2/' + id + "-new" + ext;
 
 				var paramsIM = [path];
-					// ici boucle commandes
+				
+				var tweet_text     = tweet.text.split(" ");
+				var TwitterCommand = tweet.entities.hashtags;
 
-				var contenu_txt = tweet.text[ i ].split(' ');
-				var commandes = tweet.entities.hashtags[ i ].text;
 
-				// var char = contenu_txt[ i ].substr(0,1);
-				// var char2 = contenu_txt[ i + 1 ].substr(0,1);
-
-				var newArray = [];
-
-				for( var j = 0; j < commandes.length; j++ ){
+				for ( Tindex = 0, len = TwitterCommand.length; Tindex < len; Tindex++ ){
 					
-					var match = false;
-					
-					for( var k = 0; k < LaszloCommand.length; k++ ){	
+					console.log( "TwitterCommand " + Tindex + " = #" + TwitterCommand[Tindex].text );
 
-						if ( commandes[ j ] == LaszloCommand [ k ] ){
-							match = true;
-							console.log("MATCH");
-							paramsIM.push( LaszloCommand[ k ].command, LaszloCommand[ k ].param );
-							break;
-						}
-					}
+					for ( var Lindex in LaszloCommand ){
 
-					if (!match) {
-						console.log("NO MATCH");
-						//newArray.push(commandes[j]);
-					}		
+						var racine   = LaszloCommand[Lindex].racine;
+						var synonym  = LaszloCommand[Lindex].synonym;
+						
+						var command  = LaszloCommand[Lindex].command;
+						var param    = LaszloCommand[Lindex].param;
+						var command2 = LaszloCommand[Lindex].command2;
+						var param2   = LaszloCommand[Lindex].param2;
 
-				}
+						if ( TwitterCommand[Tindex].text.toLowerCase() == racine.toLowerCase() ){
 
+							console.log( "	FOUND A MATCH with = " + TwitterCommand[Tindex].text );
+							console.log( "	Execute " + racine + " = " + command + "; " + param );
 
-				// ici fin de la boucle
+							if ( param === undefined ){
+								paramsIM.push( command );
+							} else {
+								paramsIM.push( command, param );
+							}
+
+						} else if ( TwitterCommand[Tindex].text.toLowerCase() == synonym.toLowerCase() ){
+
+							console.log( "	FOUND A MATCH with = " + TwitterCommand[Tindex].text );
+							console.log( "	Execute " + synonym + " = " + command + "; " + param );
+							
+							if ( param === undefined ){
+								paramsIM.push( command );
+							} else {
+								paramsIM.push( command, param );
+							}						
+						} 
+					}	
+				}				
+
+				console.log( "tweet.texte = " + tweet.text );
+
 				paramsIM.push(newpath);
 
-
-				console.log( tweet.entities.media[ i ].id_str, url );
+				console.log( "Media = " + tweet.entities.media[ i ].id_str, url );
 
 				download( url , path , function(){
 
@@ -98,29 +114,32 @@ stream.on('tweet', function (tweet) {
 
 					im.convert( paramsIM , function(err, stdout){
 						  if (err) throw err;
-						  console.log("fin de conversion :", newpath);
-						  console.log("#" + commandes);
+						  console.log("fin de conversion :", newpath );		  
 					});
 				});
 
-			}
+
+				// ????
+
+				var b64content = fs.readFileSync( newpath, { encoding: 'base64' } );
+				var txt = laszlo + " " + tweet.text;
+
+
+				T.post('media/upload', { media_data: b64content }, function ( err, data, response ) {
+
+					var mediaIdStr = data.media_id_string;
+					var params = { status: txt, media_ids: [mediaIdStr]};
+
+					T.post('statuses/update', params, function (err, data, response) {
+						console.log('tweet envoyé');
+					});
+				});
+				
 			
+			}
+
 		} 
 	}
 })
-
-function is_int(value){
-	if((parseFloat(value) == parseInt(value)) && !isNaN(value)){
-		return true;
-	} else {
-		return false;
-	}
-} 
-
-
-
-
-
-
 
 
