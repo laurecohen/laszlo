@@ -69,4 +69,8 @@ module.exports = {
 	}
 };
 
+<<<<<<< HEAD
 console.log("…Laszlo dictionnary ready");
+=======
+console.log("…Laszlo dictionnary ready");
+>>>>>>> FETCH_HEAD
