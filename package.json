@@ -1,0 +1,44 @@
+{
+	"name": "laszlo",
+	"version": "1.0.0",
+	"description": "Laszlo is a twitter bot",
+	"main": "laszlo.js",
+	"scripts": {
+		"start": "node laszlo.js"
+	},
+
+	"keywords": [
+	"OpenShift",
+	"Node.js",
+	"application",
+	"openshift"
+	],
+
+	"author": "Laure Cohen",
+	"license": "ISC",
+	"bugs": {
+	"url": "https://github.com/laurecohen/laszlo/issues"
+	},
+
+	"homepage": "https://github.com/laurecohen/laszlo",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/laurecohen/laszlo.git"
+	},
+
+	"engines": {
+	"node": ">= 0.6.0",
+	"npm": ">= 1.0.0"
+	},
+
+	"dependencies": {
+		"express": "~4.13.4",
+		"imagemagick": "^0.1.3",
+		"twit": "^2.2.3"
+	},
+	"devDependencies": {},
+	"bundleDependencies": [],
+
+	"private": true,
+	"main": "laszlo.js"
+}
