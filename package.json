@@ -7,6 +7,12 @@
 		"start": "node laszlo.js"
 	},
 
+	"git_executables": {
+		"git": ["/Users/cohenlaure/Documents/OpenshiftProjects/laszlo/.git"],
+		"git_flow": ["/usr/local/bin/git", "flow"],
+		"legit": ["legit"]
+	},
+
 	"keywords": [
 	"OpenShift",
 	"Node.js",
