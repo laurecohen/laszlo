@@ -13,13 +13,6 @@ npm install twit
 
 ##Secret:
 
-```javascript
-var Twit = require('twit')
+fill the file [param-sample.js].
 
-var T = new Twit({
-  consumer_key:         '...',
-  consumer_secret:      '...',
-  access_token:         '...',
-  access_token_secret:  '...',
-  timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
-})
+[param-sample.js]:../laszlo/blob/master/param-sample.js
