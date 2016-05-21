@@ -6,7 +6,6 @@
 	"scripts": {
 		"start": "node laszlo.js"
 	},
-
 	"keywords": [
 	"OpenShift",
 	"Node.js",
@@ -23,9 +22,9 @@
 	"homepage": "https://github.com/laurecohen/laszlo",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/laurecohen/laszlo.git"
+		"url": "https://github.com/laurecohen/laszlo.git"
 	},
-
+	
 	"engines": {
 	"node": ">= 0.6.0",
 	"npm": ">= 1.0.0"
@@ -37,8 +36,5 @@
 		"twit": "^2.2.3"
 	},
 	"devDependencies": {},
-	"bundleDependencies": [],
-
-	"private": true,
-	"main": "laszlo.js"
+	"bundleDependencies": []
 }
