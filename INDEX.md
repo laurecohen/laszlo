@@ -1,5 +1,5 @@
 # Quick reference for parameters ⚠
-This is intended as a quick reference and showcase about what's the basic syntax for parameters when typing a __*#command*__, runing László (i.e tweeting [@laszlobot][1]). Check the latest updates on the [README.md] file.
+This is intended as a quick reference and showcase about what's the basic syntax for parameters when typing a __*#command*__, runing László (i.e tweeting [@laszlobot][1]). Check the Option-List latest updates on the [README.md] file.
 
 [1]:https://twitter.com/laszlobot
 [2]:https://#
