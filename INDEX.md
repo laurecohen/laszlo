@@ -1,14 +1,14 @@
-# Quick reference for parameters
-This is intended as a quick reference and showcase about what's the basic syntax for parameters expected when typing a __*#command*__, runing Laszlo (i.e tweeting [@laszlobot][1]). For more complete info, see [site web][2] or [license].
+# Quick reference for parameters ⚠
+This is intended as a quick reference and showcase about what's the basic syntax for parameters when typing a __*#command*__, runing László (i.e tweeting [@laszlobot][1]). Check the latest updates on the [README.md] file.
 
 [1]:https://twitter.com/laszlobot
 [2]:https://#
-[license]:../laszlo/master/README.md
+[README.md]:../laszlo/master/README.md
 
 __________
 
 ##1. Default Mode
-If the following entry is not a number or else if no settings are entered, Laszlo will execute the default setting.
+If the next entry does not match the expected syntax or else if the parameter is missing, Laszlo will execute the default settings.
 
 >Example: The *rotation* command needs an additional value to specify the angle of the transformation. If not, __#rotation__ will be executed as __#rotation 45__.
 
