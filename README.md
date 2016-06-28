@@ -1,14 +1,15 @@
-#László 
-
-⚠ under construction ⚠
-
-##Option-List ⚠
-
->__#equalize, #fill, #flag, #flip, #flipflop, #flop, #grayscale, #level, #mirror, #negate, #normalize, #rotation, #threshold, #wave__
+#László
 
 Text-based software for image editing within [Twitter] using hashtags as command-line options.
-
 Further information about the project on [https://] ⚠
+
+##Last updates
+
+⚠ always under construction ⚠
+
+####Option-List 
+
+>__#equalize, #fill, #flag, #flip, #flipflop, #flop, #grayscale, #level, #mirror, #negate, #normalize, #rotation, #threshold, #wave__
 
 ##Initialization
 Running under [Node.js]. Image processing operations are executed thanks to [ImageMagick].
