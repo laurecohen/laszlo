@@ -3,7 +3,7 @@
 Text-based software for image editing within [Twitter] using hashtags as command-line options.
 Further information about the project on [https://] ⚠
 
-##Last updates
+##Latest update
 
 ⚠ always under construction ⚠
 
