@@ -35,7 +35,7 @@ Create [a Twitter main account] and go to [apps.twitter.com] to create your own 
 
 ####Secret:
 
-Replace  `'Your consumer_key'`, etc. with your four keys in the file `param-sample.js` to start working.
+Replace  `'Your consumer_key'`, etc. with your four keys in the file `param-sample.js`.
 
 
 ___________________
